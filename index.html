@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Payment Gateway</h1>
+    <form action="/process_payment" method="post">
+        <label for="card_number"><b>Card Number:</b></label>
+        <input type="text" id="card_number" name="card_number" required>
+        <br>
+        <br>
+        <label for="expiry_date"><b>Expiry Date:</b></label>
+        <input type="text" id="expiry_date" name="expiry_date" required>
+        <br>
+        <br>
+        <label for="cvv"><b>CVV:</b></label>
+        <input type="text" id="cvv" name="cvv" required>
+        <br>
+        <br>
+        <label for="amount"><b>Amount:</b></label>
+        <input type="text" id="amount" name="amount" required>
+        <br>
+        <br>
+        <label for="location"><b>Location:</b></label>
+        <input type="text" id="location" name="location" required>
+        <br>
+        <br>
+        <label for="timestamp"><b>Timestamp:</b></label>
+        <input type="text" id="timestamp" name="timestamp" required>
+        <br><br>
+        <button type="submit">Process Payment</button>
+    </form>
+    <br>
+    <center><a href="/transactions">View All Transactions</a></center>
+    <br>
+    <center><a href="/insights">View Transaction Insights</a></center>
+</body>
+</html>

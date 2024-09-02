@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <h1>Payment Results</h1>
+    {% if transactions %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Card Number</th>
+                    <th>Amount</th>
+                    <th>Location</th>
+                    <th>Timestamp</th>
+                    <th>Is Fraud</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction[0] }}</td>
+                    <td>{{ transaction[1] }}</td>
+                    <td>{{ transaction[4] }}</td>
+                    <td>{{ transaction[5] }}</td>
+                    <td>{{ transaction[6] }}</td>
+                    <td>{{ transaction[7] }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% elif card_number %}
+        <p>Card Number: {{ card_number }}</p>
+        <p>Amount: {{ amount }}</p>
+        <p>Fraud Detected: {{ is_fraud }}</p>
+    {% else %}
+        <p>No transactions found.</p>
+    {% endif %}
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
